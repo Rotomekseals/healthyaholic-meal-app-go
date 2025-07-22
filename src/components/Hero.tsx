@@ -1,9 +1,21 @@
 import { Button } from "@/components/ui/button";
 import heroSalad from "@/assets/hero-salad.jpg";
+import { AuthButton } from "./AuthButton";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
+    <>
+      {/* Navigation */}
+      <nav className="absolute top-0 left-0 right-0 z-20 bg-black/20 backdrop-blur-sm">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="text-2xl font-bold text-white">
+            Healthyaholic
+          </div>
+          <AuthButton />
+        </div>
+      </nav>
+      
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -68,6 +80,7 @@ const Hero = () => {
       <div className="absolute top-20 left-10 w-20 h-20 bg-healthy-yellow/20 rounded-full animate-bounce-gentle"></div>
       <div className="absolute bottom-20 right-10 w-16 h-16 bg-white/20 rounded-full animate-bounce-gentle delay-500"></div>
     </section>
+    </>
   );
 };
 
